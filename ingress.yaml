@@ -1,7 +1,7 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: playground
+  name: playground-ingress
 spec:
   ingressClassName: traefik
   rules:
@@ -10,4 +10,4 @@ spec:
           - path: /
             pathType: Prefix
             backend:
-              service: {name: playground, port: {number: 8888}}
+              service: {name: playground-service, port: {number: 8888}}
